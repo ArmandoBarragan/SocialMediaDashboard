@@ -1,0 +1,13 @@
+nav{
+    background-color: #29274C;
+}
+
+a{
+    color: white;
+}
+nav a:hover{
+    color: lightgray;
+}
+body, html{
+    height:100%;
+}

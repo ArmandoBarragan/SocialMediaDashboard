@@ -1,0 +1,19 @@
+.social{
+    font-size: 3rem;
+}
+
+*{
+    list-style: none;
+}
+
+.social-media-container{
+    background-color: #4F7CAC;
+}
+
+.graph-container{
+    background-color: #E2FDFF;
+}
+
+main{
+    padding: auto;
+}

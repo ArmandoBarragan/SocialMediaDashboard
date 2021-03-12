@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block extrastyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+{% endblock %}
+{% block nav %}
+<div class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+    <i class="fas fa-user"></i>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item" href="#">Your account</a>
+    <a class="dropdown-item" href="#">Log out</a>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+<aside class="row main h-100 mt-auto">
+  <div class="container-fluid social-media-container col-2">
+    <div class="d-flex align-items-center">
+      <ul>
+        <li>
+          <button class="btn">
+            <i class="fab fa-facebook social"></i>
+          </button>
+        </li>
+        <li>
+          <button class="btn">
+            <i class="fab fa-twitter-square social"></i>
+          </button>
+        </li>
+        <li>
+          <button class="btn">
+            <i class="fab fa-instagram social"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col graph-container">
+    <h1>{{ page_name }}</h1>
+  </div>
+</aside>
+{% endblock %}

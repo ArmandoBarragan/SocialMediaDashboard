@@ -1,0 +1,13 @@
+body{
+    background-color: #29274C;
+}
+
+form{
+    color: white;
+    margin-top: auto;
+}
+
+.outer{
+    display:table;
+    position: absolute;
+}

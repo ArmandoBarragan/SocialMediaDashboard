@@ -1,0 +1,16 @@
+{% extends 'authentication/authentication_template.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="justify-content-center align-items-center mt-auto outer">
+    <form action="" class="container col-4 text-center form-signin">
+        <h2>Log in</h2>
+        <div>
+            {% render_field form.username class="form-control" placeholder="Username" %}
+        </div>
+        <div>
+            {% render_field form.password class="form-control" placeholder="Password" %}
+        </div>
+        <input type="submit" value="Login" class="btn btn-light mt-2">
+    </form>
+</div>
+{% endblock %}
