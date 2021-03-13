@@ -1,8 +1,8 @@
 {% extends 'authentication/authentication_template.html' %}
 {% load widget_tweaks %}
 {% block content %}
-<div class="justify-content-center align-items-center outer">
     <form class="container col-5 align-middle center-text" method="POST">
+        {% csrf_token %}
         <h2>Create your account</h2>
         <div>
             <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
@@ -21,10 +21,9 @@
             {% render_field form.password1 class="form-control" %}
         </div>
         <div>
-            <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+            <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }} + (8 characters at least)</label>
             {% render_field form.password2 class="form-control" %}
         </div>
         <input type="submit" value="Create account" class="btn btn-light mt-2">
     </form>
-</div>
 {% endblock %}

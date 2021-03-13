@@ -1,8 +1,9 @@
 {% extends 'authentication/authentication_template.html' %}
 {% load widget_tweaks %}
 {% block content %}
-<div class="justify-content-center align-items-center mt-auto outer">
-    <form action="" class="container col-4 text-center form-signin">
+<div class="justify-content-center">
+    <form action="" class="container text-center form-signin col-6">
+        {% csrf_token %}
         <h2>Log in</h2>
         <div>
             {% render_field form.username class="form-control" placeholder="Username" %}
