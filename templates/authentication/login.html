@@ -2,7 +2,7 @@
 {% load widget_tweaks %}
 {% block content %}
 <div class="justify-content-center">
-    <form action="" class="container text-center form-signin col-6">
+    <form method="POST" class="container text-center form-signin col-6">
         {% csrf_token %}
         <h2>Log in</h2>
         <div>
@@ -14,4 +14,9 @@
         <input type="submit" value="Login" class="btn btn-light mt-2">
     </form>
 </div>
+{% if form.errors %}
+<div class="errors">
+    {% form.errors %}
+</div>
+{% endif %}
 {% endblock %}

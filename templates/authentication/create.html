@@ -1,29 +1,36 @@
 {% extends 'authentication/authentication_template.html' %}
 {% load widget_tweaks %}
 {% block content %}
-    <form class="container col-5 align-middle center-text" method="POST">
-        {% csrf_token %}
-        <h2>Create your account</h2>
-        <div>
-            <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
-            {% render_field form.username class="form-control" %}
-        </div>
-        <div>
-            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
-            {% render_field form.email class="form-control" %}
-        </div>
-        <div>
-            <label for="{{ form.business_name.id_for_label }}">{{ form.business_name.label }}</label>
-            {% render_field form.business_name class="form-control" %}
-        </div>
-        <div>
-            <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
-            {% render_field form.password1 class="form-control" %}
-        </div>
-        <div>
-            <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }} + (8 characters at least)</label>
-            {% render_field form.password2 class="form-control" %}
-        </div>
-        <input type="submit" value="Create account" class="btn btn-light mt-2">
-    </form>
+<form class="container col-5 align-middle center-text" method="POST">
+    {% csrf_token %}
+    <h2>Create your account</h2>
+    <div>
+        <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+        {% render_field form.username class="form-control" %}
+    </div>
+    <div>
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+        {% render_field form.email class="form-control" %}
+    </div>
+    <div>
+        <label for="{{ form.business_name.id_for_label }}">{{ form.business_name.label }}</label>
+        {% render_field form.business_name class="form-control" %}
+    </div>
+    <div>
+        <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+        {% render_field form.password1 class="form-control" %}
+    </div>
+    <div>
+        <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }} + (8 characters at least)</label>
+        {% render_field form.password2 class="form-control" %}
+    </div>
+    <input type="submit" value="Create account" class="btn btn-light mt-2">
+    {% if form.errors %}
+    <div class="errors">
+        {{ form.errors }}
+    </div>
+    {% endif %}
+
+</form>
+
 {% endblock %}
